@@ -6,10 +6,22 @@ public class Taxi extends Car{
         this.fareCollected = fareCollected;
     }
 
+    public double getFareCollected(){
+        return fareCollected;
+    }
 
 
+    public void pickupRiders(int numRiders, double farePerRider){
+        setPassengers(getPassengers()+ numRiders);
+        fareCollected = numRiders * farePerRider + getFareCollected();
 
+        if(getPassengers() >= 4 && (!isDiscountApplied())) {
+            setTollFee(getTollFee() * .5);
+            setDiscountApplied(true);
 
+        }
+
+    }
     public void printTaxi(){
             System.out.println("License Plate: " + getLicensePlate()+
                     "\n" + "TollFee: " + getTollFee() +

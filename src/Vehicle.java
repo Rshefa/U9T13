@@ -3,6 +3,7 @@ public class Vehicle {
     private double tollFee;
     private int passengers;
 
+    //constructor
     public Vehicle(String licensePlate, double tollFee, int passengers) {
         this.licensePlate = licensePlate;
         this.tollFee = tollFee;
@@ -16,6 +17,11 @@ public class Vehicle {
     public double getTollFee(){
         return tollFee;
     }
+
+    public void setTollFee(double newValue){
+        tollFee = newValue ;
+    }
+
 
     public int getPassengers(){
         return passengers;
